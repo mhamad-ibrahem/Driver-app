@@ -7,16 +7,16 @@ import '../../../../Core/Constant/TextStyles.dart';
 
 class ChatForm extends StatelessWidget {
   ChatForm({super.key});
-  ChatDetailsController chatDetailsController = Get.find();
+  final ChatDetailsController chatDetailsController = Get.find();
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: AppColors.primary,
       controller: chatDetailsController.message,
-      style: textFormStyle(),
+      style: textFormStyle(context),
       decoration: InputDecoration(
           hintText: "Type massage",
-          hintStyle: textFormStyle().copyWith(color: AppColors.deepGrey),
+          hintStyle: textFormStyle(context).copyWith(color: AppColors.deepGrey),
           enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: AppColors.grey, width: 2)),
           disabledBorder: const UnderlineInputBorder(

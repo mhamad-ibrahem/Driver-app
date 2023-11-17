@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../Core/Constant/TextStyles.dart';
-import 'CustomBackButton.dart';
+import '../Shared/custom_app_bar.dart';
 
 class CustomAppScaffold extends StatelessWidget {
   const CustomAppScaffold({
@@ -13,31 +11,24 @@ class CustomAppScaffold extends StatelessWidget {
     required this.isScroll,
     required this.widget,
     this.floatingButton,
+    this.isPurple = false,
   });
   final Color? color;
   final String pageTitle;
   final Widget widget;
   final bool isBack;
   final bool isScroll;
+  final bool isPurple;
   final bool? ispadding;
   final Widget? floatingButton;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: floatingButton,
       backgroundColor: color,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: Text(
-          pageTitle,
-          style: purpleTextStyle(false),
-        ),
-        centerTitle: true,
-        leading: isBack ? const CustomBackButton() : null,
-      ),
+      appBar:
+          customAppBar(title: pageTitle, isPurple: isPurple, isBack: isBack),
       body: Padding(
         padding: EdgeInsets.all(ispadding == null ? 20 : 0),
         child: isScroll
@@ -45,6 +36,6 @@ class CustomAppScaffold extends StatelessWidget {
                 physics: const BouncingScrollPhysics(), child: widget)
             : widget,
       ),
-    ));
+    );
   }
 }

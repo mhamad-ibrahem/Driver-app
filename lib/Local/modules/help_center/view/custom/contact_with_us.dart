@@ -1,6 +1,5 @@
 import 'package:driver_app/Local/Core/Functions/url_luncher.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'faq_list_tile.dart';
 
 class ContactWithUs extends StatelessWidget {

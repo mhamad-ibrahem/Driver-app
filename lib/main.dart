@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           theme: settingsController.saveTheme == false
               ? Themes.lightsTheme
               : Themes.darkTheme,
-          initialRoute: AppRoute.welcom,
+          initialRoute: AppRoute.welcome,
           locale: settingsController.language,
           translations: Localization(),
           getPages: routes,

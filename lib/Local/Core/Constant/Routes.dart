@@ -1,6 +1,6 @@
 class AppRoute {
   //=============WELCOM=================
-  static const String welcom = '/splash';
+  static const String welcome = '/splash';
 
   //==============AUTH================
   static const String signUp = '/signUp';

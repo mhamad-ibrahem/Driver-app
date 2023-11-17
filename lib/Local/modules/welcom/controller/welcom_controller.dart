@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:driver_app/Local/Core/Constant/Routes.dart';
 import 'package:get/get.dart';
 
-class WelcomController extends GetxController {
+class WelcomeController extends GetxController {
   Timer? timer;
   int remainingSeconds = 1;
   int times = 30;

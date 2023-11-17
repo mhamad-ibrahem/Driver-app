@@ -6,9 +6,9 @@ import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
 import '../controller/welcom_controller.dart';
 
-class Welcom extends StatelessWidget {
-  Welcom({super.key});
-  WelcomController controller = Get.put(WelcomController());
+class Welcome extends StatelessWidget {
+  Welcome({super.key});
+  final WelcomeController controller = Get.put(WelcomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(

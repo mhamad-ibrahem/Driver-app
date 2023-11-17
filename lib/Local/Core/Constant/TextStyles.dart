@@ -22,9 +22,9 @@ TextStyle buttonTextStyle() {
       fontWeight: FontWeight.w600);
 }
 
-TextStyle textFormStyle() {
+TextStyle textFormStyle(context) {
   return TextStyle(
-      color: GlobalColors.black,
+      color: Theme.of(context).secondaryHeaderColor,
       fontSize: 15.sp,
       fontFamily: AppFontFamily.appFontFamily,
       fontWeight: FontWeight.bold);

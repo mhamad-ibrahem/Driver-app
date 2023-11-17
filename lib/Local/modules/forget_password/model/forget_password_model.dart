@@ -1,10 +1,10 @@
-class CheckEmialModel {
+class ForgetPasswordModel {
   String phone;
-  CheckEmialModel({
+  ForgetPasswordModel({
     required this.phone,
   });
-  factory CheckEmialModel.fromJson(Map<String, dynamic> json) =>
-      CheckEmialModel(
+  factory ForgetPasswordModel.fromJson(Map<String, dynamic> json) =>
+      ForgetPasswordModel(
         phone: json["phone"],
       );
   Map<String, dynamic> toJson() => {

@@ -24,7 +24,7 @@ class HomeTap extends StatelessWidget {
         controller: tabController,
         splashBorderRadius: BorderRadius.circular(25),
         labelColor: GlobalColors.white,
-        unselectedLabelColor: AppColors.nav,
+        unselectedLabelColor: AppColors.dPurple,
         labelStyle: Theme.of(context)
             .textTheme
             .headline1!

@@ -6,23 +6,23 @@ import '../Core/Constant/TextStyles.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     Key? key,
-    required this.icon,
+    required this.prefix,
     required this.label,
     required this.hint,
     required this.obscure,
     required this.textEditingController,
-    required this.validator,
+    this.validator,
     this.inputType,
-    @required this.suffixIcon,
+    this.suffixIcon,
     this.onChange,
   }) : super(key: key);
-  final IconData icon;
+  final Widget prefix;
   final String label;
   final String hint;
   final bool obscure;
   final TextInputType? inputType;
   final TextEditingController? textEditingController;
-  final String? Function(String?) validator;
+  final String? Function(String?)? validator;
   final Widget? suffixIcon;
   final void Function(String)? onChange;
   @override
@@ -31,20 +31,17 @@ class CustomTextFormField extends StatelessWidget {
       onChanged: onChange,
       controller: textEditingController,
       validator: validator,
-      style: textFormStyle(),
+      style: textFormStyle(context),
       obscureText: obscure,
       maxLines: 1,
       cursorColor: AppColors.deepGrey,
       keyboardType: inputType,
       decoration: InputDecoration(
-          fillColor: GlobalColors.black,
+          // fillColor: Theme,
           suffixIcon: suffixIcon,
           prefixIcon: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Icon(
-              icon,
-              color: AppColors.primary,
-            ),
+            child: prefix,
           ),
           contentPadding:
               const EdgeInsets.only(left: 0, right: 0, top: 20, bottom: 20),

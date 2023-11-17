@@ -1,15 +1,11 @@
-import 'dart:developer';
 import 'package:driver_app/Global/Core/Class/StatusRequest.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import '../../../../Global/Core/Class/HiveBox.dart';
 import '../../../../Global/Core/Class/HiveKeys.dart';
-import '../../../../Global/Core/Functions/handilingData.dart';
-import '../../../../Global/Core/Functions/warningAuthDialog.dart';
 import '../../../Core/Constant/Routes.dart';
 import '../data/sign_up_data.dart';
-import '../model/SignUpModel.dart';
 
 class SignUpController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();

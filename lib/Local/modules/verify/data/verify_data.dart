@@ -1,13 +1,13 @@
-import 'package:driver_app/Local/modules/verifay/model/verifay_model.dart';
+import 'package:driver_app/Local/modules/verify/model/verify_model.dart';
 
 import '../../../../Global/Core/Class/Crud.dart';
 import '../../../Core/Constant/ApiLinks.dart';
 
-class VerifayData {
+class VerifyData {
   Crud crud;
-  VerifayData(this.crud);
+  VerifyData(this.crud);
 
-  checkVerifay(VerifayModel model) async {
+  checkVerifay(VerifyModel model) async {
     var response = await crud.postData(AppLinks.loginLink, model.toJson(), {});
     return response.fold((l) => l, (r) => r);
   }

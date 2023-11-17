@@ -1,3 +1,4 @@
+import 'package:driver_app/Global/Core/Constant/Colors.dart';
 import 'package:driver_app/Local/Core/Constant/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +11,7 @@ openEditBottomSheet(BuildContext context, void Function()? fromGalery,
       padding: const EdgeInsets.all(20),
       height: 140,
       decoration: const BoxDecoration(
+          color: GlobalColors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(25))),
       child: Column(
         children: [

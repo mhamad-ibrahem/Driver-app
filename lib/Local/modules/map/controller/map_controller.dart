@@ -65,24 +65,23 @@ class MapController extends GetxController {
   getPolyline() async {
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
         googleAPiKey,
-        const PointLatLng(37.2677669, -122.0705442), //source
-        const PointLatLng(38.2677669, -123.0705442), //destination
+        const PointLatLng(39.5299, -119.814), //source
+        const PointLatLng(40.2721, -119.132), //destination
         travelMode: TravelMode.driving,
         wayPoints: [PolylineWayPoint(location: "Sabo, Yaba Lagos Nigeria")]);
-    // if (result.points.isNotEmpty) {
-    //   result.points.forEach((PointLatLng point) {
-    polylineCoordinates.add(const LatLng(37.2677669, -122.0705442));
-    polylineCoordinates.add(const LatLng(37.452390, -122.235880));
-    addPolyLine();
+    if (result.points.isNotEmpty) {
+      result.points.forEach((PointLatLng point) {
+        polylineCoordinates.add(const LatLng(37.2677669, -122.0705442));
+        polylineCoordinates.add(const LatLng(37.452390, -122.235880));
+        addPolyLine();
+      });
+    }
   }
 
   @override
   void onInit() {
-    postionStream = Geolocator.getPositionStream().listen((Position position) {
-      changeDriverMarker(position.latitude, position.longitude);
-    });
     getCurrentLocation();
-    getPolyline();
+
     super.onInit();
   }
 }

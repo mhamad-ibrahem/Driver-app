@@ -24,8 +24,8 @@ class HandilingDataView extends StatelessWidget {
   }
 }
 
-class HandilingDataRequest extends StatelessWidget {
-  const HandilingDataRequest(
+class HandlingDataRequest extends StatelessWidget {
+  const HandlingDataRequest(
       {super.key, required this.statusRequest, required this.child});
   final StatusRequest statusRequest;
   final Widget child;

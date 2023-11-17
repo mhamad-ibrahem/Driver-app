@@ -15,7 +15,7 @@ class RememberMeRow extends StatelessWidget {
       : super(key: key);
   final bool rememberMe;
   final void Function(bool?)? onChanged;
-  void Function()? forgetPassword;
+  final void Function()? forgetPassword;
   final bool isLogin;
   @override
   Widget build(BuildContext context) {

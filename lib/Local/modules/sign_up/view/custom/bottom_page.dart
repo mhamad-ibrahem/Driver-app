@@ -7,7 +7,7 @@ import '../../../../Widget/CustomButton.dart';
 
 class BottomPageSignUp extends StatelessWidget {
   BottomPageSignUp({super.key});
-  SignUpController controller = Get.find();
+  final SignUpController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Column(

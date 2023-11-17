@@ -1,26 +1,37 @@
 import 'package:driver_app/Global/Core/Class/HandilingData.dart';
-import 'package:driver_app/Global/Core/Constant/Colors.dart';
 import 'package:driver_app/Global/Core/Constant/Size.dart';
 import 'package:driver_app/Local/modules/sign_up/controller/SignUpController.dart';
-import 'package:driver_app/Local/Core/Constant/TextStyles.dart';
-import 'package:driver_app/Local/Widget/CustomBackButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../Core/Constant/Colors.dart';
+import '../../../Core/Constant/Images.dart';
+import '../../../Shared/custom_app_bar.dart';
 import 'custom/bottom_page.dart';
 import 'custom/sign_up_form.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({super.key});
 
-  SignUpController controller = Get.put(SignUpController());
+  final SignUpController controller = Get.put(SignUpController());
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            backgroundColor: AppColors.lPurple,
+        child: Stack(
+      children: [
+        SizedBox(
+          height: AppSize.screenHight,
+          width: AppSize.screenWidth,
+          child: Image.asset(
+            AppImages.backgroundImage,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Scaffold(
+            appBar: customAppBar(
+              title: 'Sign Up',
+            ),
+            backgroundColor: Colors.transparent,
             body: GetBuilder<SignUpController>(
-                builder: (controller) => HandilingDataRequest(
+                builder: (controller) => HandlingDataRequest(
                     statusRequest: controller.statusRequest,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,21 +43,6 @@ class SignUp extends StatelessWidget {
                               color: Colors.transparent,
                               height: AppSize.screenHight * 0.2,
                               padding: const EdgeInsets.only(top: 10),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  const CustomBackButton(),
-                                  Text(
-                                    "Sign Up",
-                                    style: purpleTextStyle(false),
-                                  ),
-                                  const SizedBox(
-                                    width: 50,
-                                  ),
-                                ],
-                              ),
                             ),
                           ),
                           Expanded(
@@ -67,6 +63,8 @@ class SignUp extends StatelessWidget {
                                             Expanded(child: SignUpForm()),
                                             BottomPageSignUp()
                                           ]))))
-                        ])))));
+                        ])))),
+      ],
+    ));
   }
 }

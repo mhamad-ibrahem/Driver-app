@@ -7,7 +7,7 @@ import '../../../../Widget/CustomTextFormField.dart';
 
 class EditForm extends StatelessWidget {
   EditForm({super.key});
-  EditeProfileController controller = Get.find();
+  final EditeProfileController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -16,45 +16,61 @@ class EditForm extends StatelessWidget {
           child: Column(
             children: [
               CustomTextFormField(
-                icon: Icons.person,
+                prefix: const Icon(
+                  Icons.person,
+                  color: AppColors.primary,
+                ),
                 label: "Name",
                 hint: "Enter your name",
                 obscure: false,
                 textEditingController: controller.name,
-                validator: (val) {},
+                validator: (val) {
+                  return null;
+                },
               ),
               const SizedBox(
                 height: 30,
               ),
               CustomTextFormField(
-                icon: Icons.phone_android_rounded,
+                prefix: const Icon(
+                  Icons.phone_android_outlined,
+                  color: AppColors.primary,
+                ),
                 label: "Phone Number",
                 hint: "Enter your phone number",
                 obscure: false,
                 textEditingController: controller.phone,
-                validator: (val) {},
+                inputType: TextInputType.phone,
+                validator: (val) {
+                  return null;
+                },
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              CustomTextFormField(
-                icon: Icons.lock,
-                label: "Password",
-                hint: "Enter your password",
-                obscure: true,
-                textEditingController: controller.password,
-                validator: (val) {},
-                suffixIcon: IconButton(
-                    onPressed: () {
-                      controller.changeObscure();
-                    },
-                    icon: Icon(
-                      controller.obscure
-                          ? Icons.visibility_rounded
-                          : Icons.visibility_off_rounded,
-                      color: AppColors.deepGrey,
-                    )),
-              ),
+              // const SizedBox(
+              //   height: 30,
+              // ),
+              // CustomTextFormField(
+              //   prefix: const Icon(
+              //     Icons.lock,
+              //     color: AppColors.primary,
+              //   ),
+              //   label: "Password",
+              //   hint: "Enter your password",
+              //   obscure: true,
+              //   textEditingController: controller.password,
+              //   validator: (val) {
+              //     return null;
+              //   },
+              //   suffixIcon: IconButton(
+              //       onPressed: () {
+              //         controller.changeObscure();
+              //       },
+              //       icon: Icon(
+              //         controller.obscure
+              //             ? Icons.visibility_rounded
+              //             : Icons.visibility_off_rounded,
+              //         color: AppColors.deepGrey,
+              //       )),
+              // ),
             ],
           )),
     );

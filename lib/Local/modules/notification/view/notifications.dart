@@ -2,7 +2,6 @@ import 'package:driver_app/Global/Core/Constant/Size.dart';
 import 'package:driver_app/Local/Widget/CustomButton.dart';
 import 'package:driver_app/Local/modules/notification/model/notification_model.dart';
 import 'package:flutter/material.dart';
-import '../../../Shared/app_divider.dart';
 import '../../../Widget/CustomAppScaffold.dart';
 import 'custom/notifications_body.dart';
 
@@ -13,6 +12,7 @@ class Notifications extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAppScaffold(
         pageTitle: "Notification",
+        isPurple: true,
         isBack: true,
         isScroll: false,
         widget: Column(

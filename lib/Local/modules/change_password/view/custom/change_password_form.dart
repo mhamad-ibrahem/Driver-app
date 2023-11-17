@@ -8,7 +8,7 @@ import '../../../../Widget/CustomTextFormField.dart';
 
 class ChangePasswordForm extends StatelessWidget {
   ChangePasswordForm({super.key});
-  ChangePasswordController controller = Get.find();
+  final ChangePasswordController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -24,12 +24,17 @@ class ChangePasswordForm extends StatelessWidget {
                     subTitle: "Enter a new password to confirm ",
                     isVerifay: false),
                 CustomTextFormField(
-                  icon: Icons.lock,
+                  prefix: const Icon(
+                    Icons.lock,
+                    color: AppColors.primary,
+                  ),
                   label: "New password",
                   hint: "Enter your new password",
                   obscure: controller.obscure1,
                   textEditingController: controller.password,
-                  validator: (val) {},
+                  validator: (val) {
+                    return null;
+                  },
                   suffixIcon: IconButton(
                       onPressed: () {
                         controller.changeObscure1();
@@ -45,12 +50,17 @@ class ChangePasswordForm extends StatelessWidget {
                   height: 30,
                 ),
                 CustomTextFormField(
-                  icon: Icons.lock,
+                  prefix: const Icon(
+                    Icons.lock,
+                    color: AppColors.primary,
+                  ),
                   label: "Confirm password",
                   hint: "Confirm your new password",
                   obscure: controller.obscure2,
                   textEditingController: controller.confirmPassword,
-                  validator: (val) {},
+                  validator: (val) {
+                    return null;
+                  },
                   suffixIcon: IconButton(
                       onPressed: () {
                         controller.changeObscure2();

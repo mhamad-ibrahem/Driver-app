@@ -8,7 +8,7 @@ import '../../../Shared/order.dart';
 
 class AcceptedOrders extends StatelessWidget {
   AcceptedOrders({super.key});
-  HomeController controller = Get.find();
+  final HomeController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Padding(

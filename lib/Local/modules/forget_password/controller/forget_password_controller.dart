@@ -1,18 +1,15 @@
-import 'dart:developer';
 import 'package:driver_app/Local/Core/Constant/Routes.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../../../../Global/Core/Class/StatusRequest.dart';
-import '../../../../Global/Core/Functions/handilingData.dart';
-import '../../../../Global/Core/Functions/warningAuthDialog.dart';
-import '../data/check_email_data.dart';
-import '../model/CheckEmialModel.dart';
+import '../data/forget_password_data.dart';
 
-class CheckEmailController extends GetxController {
+class ForgetPasswordController extends GetxController {
   TextEditingController phone = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   StatusRequest statusRequest = StatusRequest.none;
-  CheckEmailData checkEmailData = CheckEmailData(Get.find());
+  ForgetPasswordData forgetPasswordData = ForgetPasswordData(Get.find());
+  RxString countryCode = '963'.obs;
 
   goToVerifay() async {
     // var formData = formKey.currentState;
@@ -20,7 +17,7 @@ class CheckEmailController extends GetxController {
     //   CheckEmialModel checkEmialModel = CheckEmialModel(phone: phone.text);
     //   statusRequest = StatusRequest.loading;
     //   update();
-    //   var response = await checkEmailData.checkEmail(checkEmialModel);
+    //   var response = await ForgetPasswordData.ForgetPassword(checkEmialModel);
     //   statusRequest = handilingData(response);
     //   log(response);
     //   if (StatusRequest.success == statusRequest) {

@@ -1,16 +1,12 @@
 import 'dart:async';
-import 'dart:developer';
 import 'package:driver_app/Local/Core/Constant/Routes.dart';
-import 'package:driver_app/Local/modules/verifay/data/verifay_data.dart';
+import 'package:driver_app/Local/modules/verify/data/verify_data.dart';
 import 'package:get/get.dart';
 import '../../../../Global/Core/Class/StatusRequest.dart';
-import '../../../../Global/Core/Functions/handilingData.dart';
-import '../../../../Global/Core/Functions/warningAuthDialog.dart';
-import '../model/verifay_model.dart';
 
-class VerifayController extends GetxController {
+class VerifyController extends GetxController {
   StatusRequest statusRequest = StatusRequest.none;
-  VerifayData verifayData = VerifayData(Get.find());
+  VerifyData verifyData = VerifyData(Get.find());
   late String phone;
   Timer? timer;
   int remainingSeconds = 1;
@@ -35,7 +31,7 @@ class VerifayController extends GetxController {
   }
 
   resendVirifayCode() {
-    verifayData.resendCode(phone);
+    verifyData.resendCode(phone);
     startTimer(30);
   }
 

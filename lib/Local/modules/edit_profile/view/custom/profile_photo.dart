@@ -10,14 +10,14 @@ import 'edit_bottom_sheet.dart';
 
 class ProfilePhoto extends StatelessWidget {
   ProfilePhoto({super.key});
-  EditeProfileController controller = Get.find();
+  final EditeProfileController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         controller.image == null
             ? const CircleAvatar(
-                backgroundColor: AppColors.primary,
+                backgroundColor: AppColors.lPurple,
                 backgroundImage: AssetImage(AppImages.profile2),
                 maxRadius: 70,
               )
@@ -29,7 +29,7 @@ class ProfilePhoto extends StatelessWidget {
                 ),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(100),
-                    child: Image.file(controller.image!, fit: BoxFit.fill)),
+                    child: Image.file(controller.image!, fit: BoxFit.cover)),
               ),
 
         // CircleAvatar(

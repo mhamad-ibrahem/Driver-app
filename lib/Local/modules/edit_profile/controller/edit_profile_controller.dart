@@ -1,15 +1,11 @@
-import 'dart:developer';
 import 'dart:io';
 import 'package:driver_app/Local/modules/edit_profile/data/edit_profile_data.dart';
-import 'package:driver_app/Local/modules/edit_profile/model/edit_profile_controller.dart';
 import 'package:driver_app/Local/modules/profile/model/profile_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../Global/Core/Class/StatusRequest.dart';
-import '../../../../Global/Core/Functions/handilingData.dart';
-import '../../../../Global/Core/Functions/warningAuthDialog.dart';
 
 class EditeProfileController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();

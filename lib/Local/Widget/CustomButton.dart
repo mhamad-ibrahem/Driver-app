@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onTap,
-      color: AppColors.dPurple,
+      color: AppColors.primary,
       disabledColor: AppColors.deepGrey,
       disabledTextColor: GlobalColors.white,
       height: hieght ?? 40,

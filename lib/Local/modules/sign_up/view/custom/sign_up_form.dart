@@ -1,3 +1,4 @@
+import 'package:driver_app/Local/Shared/show_country_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/SignUpController.dart';
@@ -7,7 +8,7 @@ import '../../../../Widget/CustomTextFormField.dart';
 
 class SignUpForm extends StatelessWidget {
   SignUpForm({super.key});
-  SignUpController controller = Get.find();
+  final SignUpController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -30,34 +31,39 @@ class SignUpForm extends StatelessWidget {
                 height: 40,
               ),
               CustomTextFormField(
-                icon: Icons.person,
+                prefix: const Icon(
+                  Icons.person,
+                  color: AppColors.primary,
+                ),
                 label: "Name",
                 hint: "Enter your name",
                 obscure: false,
                 textEditingController: controller.name,
-                validator: (val) {},
               ),
               const SizedBox(
                 height: 30,
               ),
               CustomTextFormField(
-                icon: Icons.phone_android_rounded,
+                prefix: CustomCountryPicker(
+                    onSelect: (country) {}, countryCode: '+963'),
                 label: "Phone Number",
                 hint: "Enter your phone number",
                 obscure: false,
+                inputType: TextInputType.phone,
                 textEditingController: controller.phone,
-                validator: (val) {},
               ),
               const SizedBox(
                 height: 30,
               ),
               CustomTextFormField(
-                icon: Icons.lock,
+                prefix: const Icon(
+                  Icons.lock,
+                  color: AppColors.primary,
+                ),
                 label: "Password",
                 hint: "Enter your password",
                 obscure: controller.obscure,
                 textEditingController: controller.password,
-                validator: (val) {},
                 suffixIcon: IconButton(
                     onPressed: () {
                       controller.changeObscure();

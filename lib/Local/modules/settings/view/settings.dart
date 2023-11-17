@@ -4,11 +4,9 @@ import 'package:driver_app/Local/modules/settings/controller/settings_controller
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../Global/Core/Constant/Colors.dart';
-
 class Settings extends StatelessWidget {
   Settings({super.key});
-  SettingsController controller = Get.find();
+  final SettingsController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +14,7 @@ class Settings extends StatelessWidget {
         // color: GlobalColors.white,
         pageTitle: "Settings",
         isBack: true,
+        isPurple: true,
         isScroll: true,
         ispadding: false,
         widget: GetBuilder<SettingsController>(

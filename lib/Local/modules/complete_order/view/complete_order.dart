@@ -1,4 +1,3 @@
-import 'package:driver_app/Global/Core/Constant/Colors.dart';
 import 'package:driver_app/Global/Core/Constant/Size.dart';
 import 'package:driver_app/Local/Core/Constant/Images.dart';
 import 'package:driver_app/Local/Core/Constant/Routes.dart';
@@ -8,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import '../../../Core/Constant/Colors.dart';
 
 class CompleteOrder extends StatelessWidget {
   const CompleteOrder({super.key});

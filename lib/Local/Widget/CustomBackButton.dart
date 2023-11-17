@@ -1,3 +1,4 @@
+import 'package:driver_app/Global/Core/Constant/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,7 +7,9 @@ import '../Core/Constant/Colors.dart';
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({
     super.key,
+    this.isPurple = false,
   });
+  final bool isPurple;
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -16,7 +19,7 @@ class CustomBackButton extends StatelessWidget {
       icon: Icon(GetPlatform.isAndroid
           ? Icons.arrow_back_rounded
           : Icons.arrow_back_ios_rounded),
-      color: AppColors.primary,
+      color: isPurple ? AppColors.dPurple : GlobalColors.white,
     );
   }
 }

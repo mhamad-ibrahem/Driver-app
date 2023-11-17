@@ -20,6 +20,7 @@ class Themes {
     ),
     timePickerTheme: ltimepicker(),
     primaryColor: GlobalColors.white,
+    secondaryHeaderColor: GlobalColors.black,
     textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
             foregroundColor: MaterialStateProperty.resolveWith(getColor))),
@@ -35,6 +36,7 @@ class Themes {
       headline5: dheadLine5(),
       headline6: dheadLine6(),
     ),
+    secondaryHeaderColor: GlobalColors.white,
     primaryColor: GlobalColors.black,
     timePickerTheme: dtimepicker(),
     textButtonTheme: TextButtonThemeData(

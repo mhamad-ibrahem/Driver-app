@@ -13,6 +13,7 @@ class HelpCenter extends StatelessWidget {
         pageTitle: "Help Center",
         isBack: true,
         isScroll: true,
+        isPurple: true,
         widget: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [Faq(), ContactWithUs()],

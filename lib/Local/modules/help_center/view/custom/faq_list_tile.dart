@@ -29,10 +29,9 @@ class FaqListTile extends StatelessWidget {
             title,
             style: isTrailing
                 ? Theme.of(context).textTheme.headline1
-                : Theme.of(context)
-                    .textTheme
-                    .headline1!
-                    .copyWith(fontSize: 15.sp, color: AppColors.lblack),
+                : Theme.of(context).textTheme.headline1!.copyWith(
+                      fontSize: 15.sp,
+                    ),
           ),
           subtitle: isLeading
               ? Text(

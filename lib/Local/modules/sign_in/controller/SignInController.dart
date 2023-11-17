@@ -1,14 +1,10 @@
 import 'package:driver_app/Local/Core/Constant/Routes.dart';
 import 'package:driver_app/Local/modules/sign_in/data/sign_in_data.dart';
-import 'package:driver_app/Local/modules/sign_in/model/SignInModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import '../../../../Global/Core/Class/HiveBox.dart';
-import '../../../../Global/Core/Class/HiveKeys.dart';
 import '../../../../Global/Core/Class/StatusRequest.dart';
-import '../../../../Global/Core/Functions/handilingData.dart';
-import '../../../../Global/Core/Functions/warningAuthDialog.dart';
 
 class SignInController extends GetxController {
   final TextEditingController phone = TextEditingController();
@@ -17,8 +13,10 @@ class SignInController extends GetxController {
   Box? authBox;
   StatusRequest statusRequest = StatusRequest.none;
   SignInData signInData = SignInData(Get.find());
-  bool rememberMe = false;
-  bool obscure = true;
+  RxBool rememberMe = false.obs;
+  RxBool obscure = true.obs;
+
+  RxString countryCode = '963'.obs;
 
   signIn() async {
     var formData = formKey.currentState;
@@ -52,16 +50,6 @@ class SignInController extends GetxController {
 
   goToForgetPassword() {
     Get.toNamed(AppRoute.emailSending);
-  }
-
-  rememberMeCheck() {
-    rememberMe = !rememberMe;
-    update();
-  }
-
-  changeObscure() {
-    obscure = !obscure;
-    update();
   }
 
   void openBox() async {

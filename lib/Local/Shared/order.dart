@@ -1,11 +1,8 @@
 import 'package:driver_app/Local/Core/Constant/Colors.dart';
 import 'package:driver_app/Local/Core/Constant/Images.dart';
 import 'package:driver_app/Local/Core/Constant/TextStyles.dart';
-import 'package:driver_app/Local/modules/home/model/home_model.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../modules/home/controller/home_controller.dart';
+import 'package:flutter/material.dart';
 
 class Order extends StatelessWidget {
   Order({

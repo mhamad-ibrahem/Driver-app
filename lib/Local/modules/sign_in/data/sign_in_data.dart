@@ -11,9 +11,4 @@ class SignInData {
     return response.fold((l) => l, (r) => r);
   }
 
-  getData() async {
-    var response = await crud.postData(
-        "https://jostore2000.000webhostapp.com/portfolio.php", {}, {});
-    return response.fold((l) => l, (r) => r);
-  }
 }
